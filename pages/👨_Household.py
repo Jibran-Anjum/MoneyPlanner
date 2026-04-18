@@ -67,6 +67,9 @@ def show_household():
         st.session_state["household_plan"] = plan
 
     if "household_plan" in st.session_state:
+        st.success("✅ Your plan is ready! Scroll down to view the details.")
+        # Create an anchor target
+        st.markdown('<div id="plan-results"></div>', unsafe_allow_html=True)
         _display_plan(st.session_state["household_plan"], currency_symbol)
 
 

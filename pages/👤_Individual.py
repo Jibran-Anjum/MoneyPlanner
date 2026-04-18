@@ -86,6 +86,9 @@ def show_individual():
     # Check if a plan exists in session state before trying to display it
     # This prevents errors on first load when no plan has been generated yet
     if "individual_plan" in st.session_state:
+        st.success("✅ Your plan is ready! Scroll down to view the details.")
+        # Create an anchor target
+        st.markdown('<div id="plan-results"></div>', unsafe_allow_html=True)
         _display_plan(st.session_state["individual_plan"], currency_symbol)
 
 # ═════════════════════════════════════════════════════════════════════════════
