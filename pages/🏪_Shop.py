@@ -33,16 +33,15 @@ def show_shop():
 
     st.title("🏪 Shop Financial Planner")
     st.caption("Analyse your shop's revenue, costs, loans and business goals.")
-    st.markdown("---")
+    # st.markdown("---")
 
     # ── CURRENCY SELECTOR ────────────────────────────────────────────────────
-    currency = st.selectbox(
-        "Select your currency",
-        options=["Rs. (PKR)", "$ (USD)", "€ (EUR)", "£ (GBP)", "AED (UAE)"],
-        index=0
-    )
-    currency_symbol = currency.split(" ")[0]
-
+    # currency = st.selectbox(
+    #     "Select your currency",
+    #     options=["Rs. (PKR)", "$ (USD)", "€ (EUR)", "£ (GBP)", "AED (UAE)"],
+    #     index=0
+    # )
+    currency_symbol = st.session_state.get("currency_symbol", "Rs.")
     st.markdown("---")
 
     # ── INPUT SECTIONS ───────────────────────────────────────────────────────
@@ -194,8 +193,10 @@ def _section_loans(currency_symbol):
         if st.button("➕ Add a Loan", use_container_width=True, key="shop_add_loan"):
             st.session_state["shop_num_loans"] += 1
 
+    confirm_clear_loans = st.checkbox("Confirm clear", key="confirm_clear_loans")
+
     with col_clear:
-        if st.button("🗑️ Clear All Loans", use_container_width=True, key="shop_clear_loans"):
+        if st.button("🗑️ Clear All Loans", disabled=not confirm_clear_loans, use_container_width=True, key="shop_clear_loans"):
             st.session_state["shop_num_loans"] = 0
 
     loans = []
@@ -277,8 +278,10 @@ def _section_investments(currency_symbol):
         if st.button("➕ Add an Investment", use_container_width=True, key="shop_add_inv"):
             st.session_state["shop_num_investments"] += 1
 
+    confirm_clear_investments = st.checkbox("Confirm clear", key="confirm_clear_inv")
+
     with col_clear:
-        if st.button("🗑️ Clear All Investments", use_container_width=True, key="shop_clear_inv"):
+        if st.button("🗑️ Clear All Investments", disabled=not confirm_clear_investments, use_container_width=True, key="shop_clear_inv"):
             st.session_state["shop_num_investments"] = 0
 
     investments = []
@@ -359,8 +362,10 @@ def _section_goals(currency_symbol):
         if st.button("➕ Add a Goal", use_container_width=True, key="shop_add_goal"):
             st.session_state["shop_num_goals"] += 1
 
+    confirm_clear_goals = st.checkbox("Confirm clear", key="confirm_clear_goals")
+
     with col_clear:
-        if st.button("🗑️ Clear All Goals", use_container_width=True, key="shop_clear_goals"):
+        if st.button("🗑️ Clear All Goals", disabled=not confirm_clear_goals, use_container_width=True, key="shop_clear_goals"):
             st.session_state["shop_num_goals"] = 0
 
     goals = []

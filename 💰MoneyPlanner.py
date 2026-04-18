@@ -10,6 +10,15 @@ st.set_page_config(
         initial_sidebar_state = 'expanded'
         )
 
+with st.sidebar:
+    st.header("⚙️ Settings")
+    currency = st.selectbox(
+        "Select Currency",
+        options=["Rs. (PKR)", "$ (USD)", "€ (EUR)", "£ (GBP)", "AED (UAE)"],
+        key="global_currency"  # Streamlit saves this automatically
+    )
+    st.session_state["currency_symbol"] = currency.split(" ")[0]
+
 ####################
 # HOME PAGE FUNCTIONS
 ####################

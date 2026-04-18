@@ -27,15 +27,13 @@ def show_household():
 
     st.title("👨‍👩‍👧 Household Financial Planner")
     st.caption("Plan your household finances across all earners and shared expenses.")
-    st.markdown("---")
 
-    currency = st.selectbox(
-        "Select your currency",
-        options=["Rs. (PKR)", "$ (USD)", "€ (EUR)", "£ (GBP)", "AED (UAE)"],
-        # index=0
-    )
-    currency_symbol = currency.split(" ")[0]
-
+    # currency = st.selectbox(
+    #     "Select your currency",
+    #     options=["Rs. (PKR)", "$ (USD)", "€ (EUR)", "£ (GBP)", "AED (UAE)"],
+    #     # index=0
+    # )
+    currency_symbol = st.session_state.get("currency_symbol", "Rs.")
     st.markdown("---")
 
     earners          = _section_earners(currency_symbol)
@@ -90,9 +88,12 @@ def _section_earners(currency_symbol):
         if st.button("➕ Add an Earner", use_container_width=True):
             st.session_state["num_earners"] += 1
 
+    confirm_clear_earners = st.checkbox("Confirm clear", key="confirm_clear_earners")
+
     with col_clear:
-        if st.button("🗑️ Clear All Earners", use_container_width=True):
+        if st.button("🗑️ Clear All Earners", disabled=not confirm_clear_earners, use_container_width=True):
             st.session_state["num_earners"] = 1
+            st.rerun()
 
     earners = []
 
@@ -188,8 +189,10 @@ def _section_loans(currency_symbol):
         if st.button("➕ Add a Loan", use_container_width=True, key="hh_add_loan"):
             st.session_state["hh_num_loans"] += 1
 
+    confirm_clear_loans = st.checkbox("Confirm clear", key="confirm_clear_loans")
+
     with col_clear:
-        if st.button("🗑️ Clear All Loans", use_container_width=True, key="hh_clear_loans"):
+        if st.button("🗑️ Clear All Loans", disabled=not confirm_clear_loans, use_container_width=True, key="hh_clear_loans"):
             st.session_state["hh_num_loans"] = 0
 
     loans = []
@@ -263,9 +266,9 @@ def _section_investments(currency_symbol):
     with col_add:
         if st.button("➕ Add an Investment", use_container_width=True, key="hh_add_inv"):
             st.session_state["hh_num_investments"] += 1
-
+    confirm_clear_investments = st.checkbox("Confirm clear", key="confirm_clear_inv")
     with col_clear:
-        if st.button("🗑️ Clear All Investments", use_container_width=True, key="hh_clear_inv"):
+        if st.button("🗑️ Clear All Investments", disabled=not confirm_clear_investments, use_container_width=True, key="hh_clear_inv"):
             st.session_state["hh_num_investments"] = 0
 
     investments = []
@@ -340,8 +343,10 @@ def _section_goals(currency_symbol):
         if st.button("➕ Add a Goal", use_container_width=True, key="hh_add_goal"):
             st.session_state["hh_num_goals"] += 1
 
+    confirm_clear_goals = st.checkbox("Confirm clear", key="confirm_clear_goals")
+
     with col_clear:
-        if st.button("🗑️ Clear All Goals", use_container_width=True, key="hh_clear_goals"):
+        if st.button("🗑️ Clear All Goals", disabled=not confirm_clear_goals, use_container_width=True, key="hh_clear_goals"):
             st.session_state["hh_num_goals"] = 0
 
     goals = []
