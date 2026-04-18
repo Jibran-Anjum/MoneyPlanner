@@ -226,7 +226,7 @@ def _buildRecommendationsIndividual(income, expenses, debt, savings, dti, health
         f'at least {_formatCurrency(emergency["minimum_fund"])} '
         f'(3 months of expenses). '
         f'Your ideal target is {_formatCurrency(emergency["recommended_fund"])} '
-        f'(6 months). Keep this in a seperate savings account and never invest it.'
+        f'(6 months). Keep this in a separate savings account and never invest it.'
     )
 
     recommendations.append(

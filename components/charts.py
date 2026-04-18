@@ -398,7 +398,7 @@ def chartHouseholdIncomeContributions(income_contributions, currency_symbol="Rs.
         hovertemplate = (
             "<b>%{label}</b><br>"
             "Contribution: %{value:.1f}%<br>"
-            f"{currency_symbol} " +
+            f"{currency_symbol} %{{customdata:,.2f}}" +
             "<extra></extra>"
         ),
         customdata    = incomes

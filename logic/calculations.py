@@ -181,7 +181,7 @@ def debtToIncomeRatio(total_monthly_debt_payments, gross_monthly_income):
         advice = 'Over a third of your income goes to debt. Focus on paying down loans before new spending.'
     else:
         status = 'Dangerous'
-        advice = 'More than half your income goes to debt. Prioritize debt reduction immediately and considor speaking to a financial advisor.'
+        advice = 'More than half your income goes to debt. Prioritize debt reduction immediately and consider speaking to a financial advisor.'
 
     return {
         'ratio': round(ratio, 2),
@@ -312,7 +312,7 @@ def financialHealthScore(monthly_income, monthly_expenses, total_monthly_debt, \
 
     if score >= 80:
         grade = '🟢 Excellent'
-        advice = 'Your finances are in greate shape. Keep maintaining your savings and low debt levels.'
+        advice = 'Your finances are in great shape. Keep maintaining your savings and low debt levels.'
     elif score >= 60:
         grade = '🟡 Good'
         advice = 'Your finances are healthy but there is room to grow your savings or reduce debt.'

@@ -73,7 +73,7 @@ with step3:
     st.info('**Step 3:**\n\nWe calculate your Financial Health Score')
 
 with step4:
-    st.info('**Step 4:**\n\nReceive your Pesonalized Financial Plan')
+    st.info('**Step 4:**\n\nReceive your Personalized Financial Plan')
 
 ############
 # DISCLAIMER
