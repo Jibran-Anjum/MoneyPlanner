@@ -31,7 +31,7 @@ def compoundInterest(principal, annual_rate, years, compounds_per_year=12):
 
     annual_rate_percent = annual_rate/100
 
-    total_amount = principal * (1 + annual_rate_percent/compounds_per_year)** (compounds_per_year*years)
+    total_amount = principal * (1 + annual_rate_percent/compounds_per_year)**(compounds_per_year*years)
 
     interest_earned = total_amount - principal
 
@@ -52,18 +52,20 @@ def compoundInterestYearlyBreakdown(principal, annual_rate, years, compounds_per
         raise ValueError('Compounding frequency must be atleast 1...')
 
     annual_rate_percent = annual_rate / 100
-
     breakdown = []
+    current_balance = principal
 
     for year in range(1, int(years) + 1):
+
         balance = principal * (1 + annual_rate_percent/compounds_per_year)**(compounds_per_year*year)
 
-        interest_so_far = balance - principal
+
+        total_interest_so_far = balance - principal
 
         breakdown.append({
             'year': year,
             'balance': round(balance, 2),
-            'interest_earned': round(interest_so_far, 2)
+            'interest_earned': round(total_interest_so_far, 2)
             })
 
     return breakdown
@@ -98,7 +100,7 @@ def monthlyLoanPayment(principal, annual_rate, years):
 
     total_months = years * 12
 
-    numerator = principal * monthly_rate * (1 + monthly_rate)**total_months
+    numerator = principal * (monthly_rate * (1 + monthly_rate)**total_months)
     denominator = (1 + monthly_rate)**total_months - 1
 
     monthly_payment = numerator / denominator
@@ -129,7 +131,6 @@ def loanAmortizationSchedule(principal, annual_rate, years):
         balance -= principal_paid
 
         if balance < 0:
-            principal_paid += balance
             balance = 0.0
 
         schedule.append({
@@ -145,7 +146,7 @@ def loanAmortizationSchedule(principal, annual_rate, years):
 ################################
 # BUDGET AND INCOME CALCULATIONS
 ################################
-def budgeBreakdown_50_30_20(monthly_income):
+def budgetBreakdown_50_30_20(monthly_income):
     if monthly_income < 0:
         raise ValueError('Income cannot be negative...')
 
@@ -328,5 +329,3 @@ def financialHealthScore(monthly_income, monthly_expenses, total_monthly_debt, \
         'breakdown': breakdown,
         'advice': advice
         }
-
-
