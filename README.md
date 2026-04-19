@@ -56,13 +56,13 @@ The application analyzes income, expenses, loans, investments, and savings goals
 ## Project Structure
 MoneyPlanner/
 │
-├── app.py # Home page — navigation & global currency selector
+├── 💰MoneyPlanner.py # Home page — navigation & global currency selector
 ├── requirements.txt # Python dependencies
 │
 ├── pages/
-│ ├── 1_Individual.py # Individual financial planner page
-│ ├── 2_Household.py # Household financial planner page
-│ └── 3_Shop.py # Shop financial planner page
+│ ├── 👤_Individual.py # Individual financial planner page
+│ ├── 👨‍👩‍👧_Household.py # Household financial planner page
+│ └── 🏪_Shop.py # Shop financial planner page
 │
 ├── logic/
 │ ├── calculations.py # Core financial formulas (interest, loans, health score)
