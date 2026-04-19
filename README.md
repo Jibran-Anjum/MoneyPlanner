@@ -41,15 +41,15 @@ The application analyzes income, expenses, loans, investments, and savings goals
 
 | Feature                               | Description                                                                                                                                        |
 |---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| 👤 **Individual Plan**                | Track personal income, expenses, loans, investments, and savings goals. Receive a graded Financial Health Score (0–100) with a detailed breakdown. |
-| 👨‍👩‍👧 **Household Plan** | Combine multiple earners to view total household cash flow, shared expenses, and income contribution percentages.                                  |
-| 🏪 **Shop Plan**                      | Analyze business revenue, Cost of Goods Sold (COGS), operating expenses, and profit margins with a dedicated waterfall chart.                      |
-| 🏥 **Financial Health Score**         | A proprietary 0–100 score based on four weighted components: Expense Ratio, Debt Load, Savings Rate, and Income Buffer.                            |
-| 🎯 **Smart Goal Timeline**            | Enter a target amount and the app calculates the exact month and year you will reach it based on your actual remaining monthly savings.            |
-| 📈 **Investment Projections**         | Visualize compound interest growth over time with year-by-year breakdowns and comparison against the initial principal.                            |
-| 🏦 **Loan Amortization**              | View detailed month-by-month repayment schedules showing principal vs. interest, plus side-by-side loan comparison charts.                         |
-| 🌍 **Multi-Currency Support**         | Choose from PKR, USD, EUR, GBP, and AED. Currency selection persists globally across all pages.                                                    |
-| 🔒 **Zero-Knowledge Architecture**    | No database, no user accounts, no API calls. All data remains in your browser's session state.                                                     |
+| **Individual Plan**                | Track personal income, expenses, loans, investments, and savings goals. Receive a graded Financial Health Score (0–100) with a detailed breakdown. |
+| **Household Plan** | Combine multiple earners to view total household cash flow, shared expenses, and income contribution percentages.                                  |
+| **Shop Plan**                      | Analyze business revenue, Cost of Goods Sold (COGS), operating expenses, and profit margins with a dedicated waterfall chart.                      |
+| **Financial Health Score**         | A proprietary 0–100 score based on four weighted components: Expense Ratio, Debt Load, Savings Rate, and Income Buffer.                            |
+| **Smart Goal Timeline**            | Enter a target amount and the app calculates the exact month and year you will reach it based on your actual remaining monthly savings.            |
+| **Investment Projections**         | Visualize compound interest growth over time with year-by-year breakdowns and comparison against the initial principal.                            |
+| **Loan Amortization**              | View detailed month-by-month repayment schedules showing principal vs. interest, plus side-by-side loan comparison charts.                         |
+| **Multi-Currency Support**         | Choose from PKR, USD, EUR, GBP, and AED. Currency selection persists globally across all pages.                                                    |
+| **Zero-Knowledge Architecture**    | No database, no user accounts, no API calls. All data remains in your browser's session state.                                                     |
 
 
 ---
